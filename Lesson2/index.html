@@ -1,13 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <title>HTML & CSS fundamentals</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+    <title>HTML & CSS fundamentals</title>
+    <style>
+      /* Internal styles */
+      h1 {
+        color: blue;
+        font-size: 36px;
+      }
+    </style>
+
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body>
+    <!-- Inline styles - DO NOT USE -->
+    <h1 style="color: red; font-size: 48px">Heading</h1>
+    <!-- h1...h6, div, p, form - are block level elements -->
+    <h6>Heading</h6>
+
+    <!-- a, span - inline element -->
+    <a href="https://google.com" class="link-unstyled" id="click-link"
+      >Click me</a
+    >
+    <a href="https://google.com" class="link-unstyled" id="click-link"
+      >Click me</a
+    >
+    <p>
+      Lorem ipsum dolor <span class="text-italic">sit amet consectetur</span>
+    </p>
+    <a href="https://google.com" class="link-unstyled" id="click-link"
+      >Click me</a
+    >
+    <a href="https://google.com" class="link-unstyled" id="click-link"
+      >Click me</a
+    >
+    <a href="https://google.com" class="link-unstyled" id="click-link"
+      >Click me</a
+    >
+    <a href="https://google.com" class="link-unstyled" id="click-link"
+      >Click me</a
+    >
+
+    <p>
+      Lorem ipsum dolor
+      <span class="text-italic">sit amet consectetur</span> adipisicing elit.
+      Perspiciatis, modi beatae distinctio consequuntur laboriosam ad rem odio,
+      expedita itaque voluptatibus nisi illo. Sit voluptatem quasi illo unde
+      nisi quo error.
+    </p>
+
+    <span></span>
+    <div></div>
+
+    <form action="">
+      <div>
+        <label class="block-label" for="name">Name</label>
+        <input type="text" name="name" id="name" />
+      </div>
+
+      <div>
+        <label class="block-label" for="email">Email</label>
+        <input type="text" name="email" id="email" />
+      </div>
+
+      <div>
+        <input type="checkbox" name="newsletter" id="newsletter" />
+        <label for="newsletter">Sign up for newsletter</label>
+      </div>
+    </form>
+  </body>
 </html>

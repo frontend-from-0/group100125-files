@@ -1,0 +1,88 @@
+/* Selectors are used to apply styles to certain HTML elements */
+/* 
+- HTML elements - body, p, ul, ol, form, a, div, etc.
+- Class (used in most cases, used to select multiple elements) - .className (className is the name that you create yourself)
+- ID (must be unique) - #nameOfId
+- pseudo-class - a:hover (:nameOfPseudeClassSelector), you must use one of already defined selectors in CSS
+- pseudo-element - ::first-line (::nameOfPseudeClassSelector), you must use one of already defined selectors in CSS
+*/
+
+/* Precedence
+From the least important to the most important
+- external stylesheet
+- <style> tag in HTML document
+- Inline styles
+- !important 
+
+1. Do not mix different types of adding CSS (usualy, an external CSS file is used)
+2. Do not use "!important" unless it's absolutely necessary
+
+*/
+
+/* Box sizing: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing?authuser=0 */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #f2eded;
+}
+
+h1 {
+  color: green !important;
+  font-size: 24px !important;
+}
+
+
+.text-italic {
+  font-style: italic;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover {
+  color: inherit;
+}
+
+#click-link {
+  border: 1px solid grey;
+  padding: 10px 20px 30px 40px;
+  /* padding: 10px 20px 30px; Top -  right & left - bottom */
+  /* padding: 10px 20px;  Top & bottom - right & left */
+  /* padding: 10px; All sides */
+}
+
+p {
+  color: #4e4d4d;
+  display: inline-block;
+}
+
+p::first-line {
+  color: #1e1d1d;
+}
+
+label {
+  font-size: 16px;
+  color: #4e4d4d;
+}
+
+.block-label {
+  display: block;
+}
+
+form {
+  background-color: #fffdfd;
+  padding: 40px;
+  max-width: 500px;
+  margin: 40px auto;
+}
+
+form > div {
+  margin: 20px auto;
+}
