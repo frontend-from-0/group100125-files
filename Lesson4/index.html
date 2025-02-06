@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson4 - Forms</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <form method="get">
+      <div class="input-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+      <div class="input-group">
+        <label for="country">Country</label>
+        <select name="country" id="country" required>
+          <option value="Sweeden">Sweeden</option>
+          <option value="Turkey">Turkey</option>
+          <option value="Germany">Germany</option>
+          <option value="Greece">Greece</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label for="birthday">Date of birth</label>
+        <input type="date" id="birthday" name="birthday" required />
+      </div>
+
+      <div class="input-group">
+        <label>Phone No.</label>
+        <div class="phone-input-container">
+          <input
+            type="text"
+            aria-label="Phone Country Code"
+            name="phone-country"
+            class="phone-country-code"
+            placeholder="+90"
+          />
+          <input type="tel" placeholder="5321233221" class="phone-input" aria-label="Phone" name="phone" />
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="search">Search</label>
+        <div class="icon-input-countainer">
+          <img src="./assets/search-icon.svg" alt="magnifying glass icon" />
+          <input class="icon-input" type="text" id="search" name="search" />
+        </div>
+      </div>
+      <div class="btn-container">
+        <button type="reset" class="btn">Clear</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </body>
+</html>

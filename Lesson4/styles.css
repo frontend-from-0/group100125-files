@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #160c4b;
+  --secondary-color: #9ea3a2;
+  --text-color: #fff;
+  --border-radius: 6px;
+}
+
+body {
+  margin: 0;
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+}
+
+form {
+  max-width: 600px;
+  margin: 64px auto;
+  padding: 0 28px;
+}
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 30px;
+}
+
+input,
+select {
+  font-size: 14px;
+  padding: 12px 8px;
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius);
+}
+
+.btn {
+  border-radius: var(--border-radius);
+  padding: 8px;
+  min-width: 48px;
+  border: none;
+  color: var(--text-color);
+  background-color: var(--secondary-color);
+  flex: 1;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+}
+
+.btn-container {
+  display: flex;
+  gap: 20px;
+}
+
+.phone-input-container {
+  display: flex;
+  gap: 4px;
+}
+
+.phone-country-code {
+  width: 50px;
+}
+
+.phone-input {
+  width: calc(100% - 50px - 4px);
+}
+
+.icon-input-countainer {
+  position: relative;
+}
+
+.icon-input-countainer > img {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.icon-input {
+  padding-left: 32px;
+  width: 100%;
+}
