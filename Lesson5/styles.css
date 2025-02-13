@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  max-width: 1214px;
+  margin: 0 auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.hero__container {
+  max-width: 1315px;
+  margin: 0 auto;
+}
+
+.hero__image {
+  width: 100%;
+}
+
+.filter {
+  display: flex;
+  gap: 37px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 68px;
+  margin-bottom: 62px;
+}
+
+.filter__input {
+  flex-basis: 332px;
+  padding: 14px 16px;
+}
+
+.container {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+
+.gap-32 {
+  gap: 32px;
+}
+
+.gap-12 {
+  gap: 12px;
+}
+
+.gap-70 {
+  gap: 70px;
+}
+
+/* I had to replace the space-between with center so that the leftover space on the right was equally devided between left and right side and the items inside got centered correctly. */
+.justify-center {
+  justify-content: center;
+}
+
+.card {
+  flex: 1;
+}
+
+.button {
+  background-color:  #2B4886;
+  color: #fff;
+  padding: 8px 10px;
+  min-width: 48px;
+}
