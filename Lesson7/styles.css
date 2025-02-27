@@ -8,8 +8,6 @@ Font sizes for mobile devices:
 
 */
 
-
-
 /*
 Here are commonly used media query break points:
 
@@ -37,21 +35,65 @@ Create a simple media query that changes the background color of a webpage for e
 /* Words to use with media select: and, or, not, only - e.g. '@media only screen ...'
  */
 
- /* Genelde mobile, table, desktop ayriliyor - 768px - 1040px */
+/* Genelde mobile, table, desktop ayriliyor - 768px - 1040px */
 
- * {
+* {
   box-sizing: border-box;
- }
+}
 
- body {
+body {
   margin: 0;
- }
+}
 
- a {
+a {
   color: inherit;
   text-decoration: none;
- }
+}
 
- ul {
+ul {
   padding-left: 0;
- }
+  list-style-type: none;
+}
+
+.hero-container {
+  width: 100vw;
+}
+
+.hero-container > img {
+  width: 100%;
+}
+
+
+main {
+  padding: 12px;
+}
+.controls-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.controls-list {
+  display: flex;
+  gap: 12px;
+}
+
+.visible-md {
+  display: none;
+}
+.btn {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 6px;
+}
+
+@media all and (min-width: 992px) {
+  .visible-md {
+    display: block;
+  }
+
+  .btn {
+    padding: 10px 12px;
+  }
+}
