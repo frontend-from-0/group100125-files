@@ -8,36 +8,76 @@ Focus: Variables, data types, arithmetic, strings, random numbers, template lite
 
 // 1. Declare variables firstNumber=5 and secondNumber=3 and log their sum.
 // CODE HERE
+const firstNumber = 5;
+const secondNumber = 3;
+
+console.log('Ex. 1', firstNumber + secondNumber);
+
 
 // 2. Declare variables userName and userAge. Log a greeting: "Hello! I am (userName) and I am (userAge) years old."
 // CODE HERE
+const userName = 'John';
+const userAge = 25;
+// Using template literals:
+console.log('Ex. 2', `Hello! I am ${userName} and I am ${userAge} years old.`);
+// String concatenation:
+console.log('Ex. 2', 'Hello! I am ' + userName + ' and I am ' + userAge + ' years old.');
 
 // 3. Declare variables a=10 and b=4. Log the result of a-b, a*b, and a/b.
 // CODE HERE
+const a = 10;
+const b = 4;
+console.log('Ex 3', a - b, a * b, a / b);
 
 // 4. Use template literals to log: "My name is (userName). I like JS."
-// CODE HERE
+console.log('Ex 4',`My name is ${userName} . I like JS.`);
 
 // 5. Declare a string password = "securePass". Log the length of password.
-// CODE HERE
+const password = "securePass";
+console.log('Ex.5. Password length: ', password.length);
 
 // 6. Convert the string "hello world" to uppercase and log it.
 // CODE HERE
+const greeting = "hello world";
+console.log('Ex.6.', greeting.toUpperCase());
+
+let mixedCaseGreeting = '';
+greeting.split('').forEach((char, index) => {
+  if (index === 0 || index % 2 === 0) {
+    mixedCaseGreeting += char.toUpperCase();
+  } else {
+    mixedCaseGreeting += char.toLowerCase();
+  }
+})
+console.log(mixedCaseGreeting); // HeLlO WoRlD
+
+/*
+[
+  'h', 'e', 'l', 'l',
+  'o', ' ', 'w', 'o',
+  'r', 'l', 'd'
+]
+
+*/
 
 // 7. Concatenate "Hello" and "World" with a space in between and log the result.
 // CODE HERE
 
 // 8. Check the type of a variable, e.g., let x = 42. Log the type using typeof.
 // CODE HERE
-
+const x = 42;
+console.log('Ex.8', typeof x);
 // 9. Convert the number 100 to a string and log the result.
-// CODE HERE
+const number = 100;
+console.log('Ex.9', number, number.toString());
 
 // 10. Convert the string "50" to a number and log its type to confirm the conversion.
-// CODE HERE
+console.log('Ex.10', parseInt("50"), parseInt("2.5"), parseInt("2,5"), parseInt("Batikan") );
 
-// 11. Generate a random integer between 0 and 10 and log it.
-// CODE HERE
+// 11. Generate a random integer between 2 and 10 and log it.
+console.log(Math.random()); //0.8763250588907179
+const randomFrom2To10 = Math.random() * 8 + 2;
+console.log('Ex.11', Math.floor(randomFrom2To10));
 
 // 12. Round the number 3.7 down using Math.floor and 3.2 up using Math.ceil, log both.
 // CODE HERE
