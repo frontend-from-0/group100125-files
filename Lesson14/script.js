@@ -7,12 +7,36 @@
    - Call the function with different passwords and log the result.
 */
 
+function checkPassword(password) {
+   if (password.length >= 8) {
+      console.log("Password length is sufficient.");
+   } else {
+      console.log("Password is too short.");
+   }
+}
+
+checkPassword('qwertyu');
+checkPassword('123456789');
+checkPassword('12345678');
+
+
+ 
 /*
 2. Uppercase Name
    - Define a function `uppercaseName(name)` that converts a given name to uppercase.
+   - Remove any extra spaces in around the name ('   John  ')
    - Log the uppercase result to the console.
    - Example: "John Doe" -> "JOHN DOE"
 */
+function upperCaseName(name) {
+   console.log(
+      name
+      .trim()
+      .toUpperCase()
+   );
+}
+upperCaseName(' cihan ');
+upperCaseName('John Doe');
 
 /*
 3. Lowercase Email
@@ -29,6 +53,15 @@
    - Example: "user@example.com" -> "example.com"
 */
 
+function getDomain(email) {
+   const atChar = email.indexOf('@');
+   console.log('atChar position', atChar);
+   const domain = email.substring(atChar + 1);
+   console.log(domain);   
+}
+
+getDomain('batikan@annaatalay.com');
+
 /*
 5. Check Substring
    - Define a function `containsWord(sentence, word)` that checks if the `sentence`
@@ -36,6 +69,18 @@
    - If true, log: "<word> found in sentence."
    - Else, log: "<word> not found in sentence."
 */
+function containsWord(sentence, word) {
+   if (sentence.includes(word)) {
+      console.log(word + ' is found in the sentence.');
+   } else {
+      console.log(word + ' is not found in the sentence.' )
+   }
+}
+   
+containsWord('I like apples', 'like');
+containsWord('I like apples', 'oranges');
+
+
 
 /*
 6. File Extension Check

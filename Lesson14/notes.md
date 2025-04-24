@@ -9,18 +9,21 @@ Functions are one of the fundamental building blocks of the language. They are r
 
 ### Anonymos Function Declaration 
 function (parameter1, parameter2) {
+
   return parameter1 * parameter2;
 };
 
 ### Named function:
 function multiplyTwoNumbers (parameter1, parameter2) {
-  return parameter1 * parameter2;
+  console.log(parameter1 * parameter2);
 }
 multiplyTwoNumbers(10, 40); // 400
 multiplyTwoNumbers(1, 40); // 40
 
 ### Function Expression
 const sumOfTwoNumbers = function (parameter1, parameter2) {
+  // Local scope
+  const name = 'John';
   return parameter1 + parameter2;
 };
 
@@ -33,7 +36,7 @@ Anonymus arrow function
 };
 
 ### Single line arrow function experession
-const greet = (name) =>  'Hello '+ name;
+const greet = (name) => 'Hello '+ name;
 greet('John');
 
 ### Multi line arrow function experession
