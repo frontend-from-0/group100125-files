@@ -112,34 +112,86 @@ const city = 'Paris';
 console.log('${namee} (${age}) lives in ${city}');
 
 // 17. Declare variables x=5, y=10, z=15. Log their total sum.
-// CODE HERE
+const xx = 5;
+const y = 10;
+const z = 15;
+
+console.log('Sum: ${xx + y + z}');  // Output: Sum: 30
 
 // 18. Declare dividend=10 and divisor=3. Log the quotient (divisionResult) and difference (differenceResult).
 // CODE HERE
+const dividend = 10;
+const divisor = 3;
+const divisionResult = dividend / divisor;  // 3.3333333333333335
+const differenceResult = dividend - divisor; // 7     
+console.log('Ex.18', divisionResult, differenceResult);
 
 // 19. Declare firstName and lastName. Create fullName by concatenating them with a space and log it.
-// CODE HERE
+
+const firstName = 'John';
+const lastName = 'Doe';   
+
+const fullName = firstName + ' ' + lastName; // John Doe
+console.log('Ex.19', fullName); // John Doe
 
 // 20. Declare firstFactor=7 and secondFactor=2. Log the product.
 // CODE HERE
+const firstFactor = 7;
+const secondFactor = 2; 
+const product = firstFactor * secondFactor; // 14
+console.log('Ex.20', product); // 14
 
 // 21. Log the value of Math.PI.
-// CODE HERE
+
+console.log('Ex.21', Math.PI); // 3.141592653589793
 
 // 22. Declare counter=0. Increment it using three different methods (e.g., counter++, counter+=1, counter=counter+1) and log the result each time.
 // CODE HERE
+let counterEx22 = 0;
+counterEx22++; // 1
+console.log('Ex.22', counterEx22); // 1
+counterEx22 += 1; // 2  
+
+console.log('Ex.22', counterEx22); // 2
+counterEx22 = counterEx22 + 1; // 3
+console.log('Ex.22', counterEx22); // 3
+
 
 // 23. Declare initialTemperature=20. Increase it by 5 and log the result.
-// CODE HERE
+
+const initialTemperature = 20;
+const increase = 5; // 5 degrees increase
+const finalTemperature = initialTemperature + increase; // 25 degrees 
+console.log('Ex.23', finalTemperature); // 25 degrees
+
 
 // 24. Declare numberEx9=6. Increment it using the prefix ++ operator and log both the variable and the incremented value.
 // CODE HERE
 
+const numberEx9 = 6;
+const incrementedValueEx9 = ++numberEx9; // 7 
+console.log('Ex.24', numberEx9, incrementedValueEx9); // 7 7
+
 // 25. Declare numberEx10=8. Increment it using the postfix ++ operator and log both the original variable and the incremented value.
-// CODE HERE
+
+const numberEx10 = 8;
+const incrementedValueEx10 = numberEx10++; // 8 (original value)  
+// 9 (incremented value)
+console.log('Ex.25', numberEx10, incrementedValueEx10); // 9 8  
+
 
 // 26. Declare numberEx11=-3. Increment it by 1 using prefix ++, then multiply the result by 2 and log the final value.
-// CODE HERE
+// 
+
+const numberEx11 = -3;
+const incrementedValueEx11 = ++numberEx11; // -2  
+const finalValueEx11 = incrementedValueEx11 * 2; // -4
+console.log('Ex.26', numberEx11, incrementedValueEx11, finalValueEx11); // -2 -2 -4
 
 // 27. Declare a=2 and b=3. Increment a using the prefix ++ operator, then add b to the result and log it.
-// CODE HERE
+
+const aEx27 = 2;
+const bEx27 = 3;  
+const incrementedValueEx27 = ++aEx27; // 3
+const sumEx27 = incrementedValueEx27 + bEx27; // 6
+console.log('Ex.27', incrementedValueEx27, sumEx27); // 3 6 
