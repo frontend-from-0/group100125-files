@@ -5,6 +5,19 @@
    - Log the final sum.
 */
 
+const ex1Array = [1, 3, 6, 123, 500, -10, -1000];
+
+function sumArray(numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum = sum + numbers[i];
+  }
+  console.log(sum);
+}
+
+sumArray(ex1Array);
+sumArray([0, 0, 0, 5]);
+
 /*
 2. Find Maximum Number in an Array
    - Define a function `findMax(numbers)` that uses a for loop to iterate
@@ -12,18 +25,67 @@
    - Log the largest value.
 */
 
+function findMax(numbers) {
+  let maxNumber = numbers[0];
+  for (let i = 0; i < numbers.length; i++) {
+    if (maxNumber < numbers[i]) {
+      maxNumber = numbers[i];
+    }
+  }
+  console.log("-------EX. 2-------");
+  console.log(maxNumber);
+  console.log("-------EX. 2-------");
+}
+
+findMax(ex1Array);
+
 /*
 3. Count Odd and Even Numbers
    - Define a function `countOddEven(numbers)` that loops through an array
      of numbers and counts how many are odd and how many are even.
    - Log the counts in the format: "Odd: X, Even: Y"
+   
 */
+function countOddEven(numbers) {
+  let oddNumbers = 0;
+  let evenNumbers = 0;
+
+  for (let i = 0; i < numbers.length; i++) {
+    const currentElement = numbers[i];
+    console.log("Current element", currentElement, "Current index", i);
+
+    console.log("currentElement % 2 === 1", currentElement % 2 === 1);
+    if (currentElement % 2 === 1) {
+      console.log("In the currentElement % 2 === 1 condition.");
+      oddNumbers = oddNumbers + 1;
+    } else if (currentElement % 2 === 0) {
+      evenNumbers = evenNumbers + 1;
+    }
+  }
+  console.log(`Odd: ${oddNumbers}, Even: ${evenNumbers}`);
+}
+
+function countOddEvenV2(numbers) {
+  let oddNumbers = 0;
+  let evenNumbers = 0;
+
+  for (let i = 0; i < numbers.length; i++) {
+    if (typeof numbers[i] === "number") {
+      if (numbers[i] % 2 === 1) {
+        oddNumbers = oddNumbers + 1;
+      } else {
+        evenNumbers = evenNumbers + 1;
+      }
+    }
+  }
+  console.log(`Odd: ${oddNumbers}, Even: ${evenNumbers}`);
+}
+countOddEvenV2([3, "hello", 5, 13]);
+countOddEven([5, 4, 6, 5, 13]);
 
 /*
-4. Sum of Numbers in a Range (While Loop)
-   - Define a function `sumRange(start, end)` that uses a while loop
-     to sum all integers from `start` to `end` (inclusive).
-   - Log the final sum.
+4. 
+
 */
 
 /*
@@ -33,6 +95,21 @@
    - Log the reversed array.
 */
 
+// Add ! at the end of every element in array
+const colors = ["red", "green", "blue"];
+
+function reverseArray(arr) {
+  let updatedArray = [];
+  for (const element of arr) {
+    updatedArray.push(element + "!");
+  
+  }
+  console.log('-----EX. 5-------');
+  console.log(updatedArray);
+  return updatedArray;
+}
+
+reverseArray(colors);
 /*
 6. Filter Out Negative Numbers
    - Define a function `filterNegative(numbers)` that loops through
@@ -183,7 +260,6 @@
       - logs the final queue
 */
 
-
 /*
 26. To-Do List Application 
   - Define a function `updateTodoList(todoList, startIndex, deleteCount, ...newTasks)`:
@@ -193,4 +269,4 @@
    - Logs the updated list.
 */
 
-const todoList = ['Study JS', 'Eat breakfast', 'Walk dog'];
+const todoList = ["Study JS", "Eat breakfast", "Walk dog"];
