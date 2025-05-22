@@ -72,4 +72,63 @@ Node.js or a browser console.
 3. Use an object to store discount codes and their values.
 */
 
+class ShoppingCart {
+  constructor() {
+    this._items = [];
+  }
 
+  viewCart() {
+    if (this._items.length < 1) {
+      console.log('There are no items in cart');
+      return;
+    } else {
+      console.log('Viewing items in the cart:');
+      for (const item of this._items) {
+        console.log(
+          `Item: \'${item.name}\', price: \'${item.price.amount} ${item.price.currency}\', quantity: \'${item.quantity}\'`,
+        );
+      }
+    }
+  }
+  addItem(name, price, quantity) {
+    console.log(`Adding item ${name} to the cart...`);
+    for (const item of this._items) {
+      if (item.name === name) {
+        console.log(`Item ${name} already exists, updating quantity only`);
+        item.quantity = item.quantity + quantity;
+        return;
+      }
+    }
+
+    console.log(`Item ${name} does not exist yet, adding to the cart.`);
+    this._items.push({ price, name, quantity }); //   = this._items.push({name: name, price: price,quantity: quantity})
+  }
+}
+
+const runningShoes = {
+  name: 'Running shoes',
+  price: {
+    amount: 10,
+    currency: 'USD',
+  },
+};
+
+const cart1 = new ShoppingCart();
+console.log(cart1);
+cart1.viewCart();
+
+cart1.addItem(runningShoes.name, runningShoes.price, 1);
+
+cart1.viewCart();
+cart1.addItem('shoes', {amount: 10, currency: 'USD'}, 2);
+cart1.addItem('bag', {amount: 15, currency: 'USD'}, 4);
+cart1.viewCart();
+
+
+
+// For step 5
+const discounts = {
+  save10: 'Save10',
+  save20: 'Save20',
+  save30: 'Save30',
+};
