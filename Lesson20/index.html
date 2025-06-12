@@ -12,10 +12,11 @@
         <h1>Book an Appointment</h1>
       </header>
 
-      <form class="booking">
+      <form class="booking" id="bookingForm">
         <section class="calendar">
           <label for="date">Select a date</label>
           <input type="date" id="date" />
+          
           <h2 id="timeslots-heading">Available Time Slots</h2>
           <fieldset class="timeslots" aria-labelledby="timeslots-heading">
             <legend class="hidden">Choose a time slot</legend>
@@ -31,10 +32,19 @@
           <h2>Your Appointment</h2>
           <p>Date: <span id="selected-date">-</span></p>
           <p>Time: <span id="selected-time">-</span></p>
-          <button id="confirm">Confirm Booking</button>
+          <p id="message"></p>
+          <button type="submit" id="confirm">Confirm Booking</button>
         </aside>
       </form>
+
+
+    <div class="hidden" id="confirmationCard">
+      <h2>Apointment booked.</h2>
+      <h3>Details:</h3>
+      <p>Date: <span id="selected-date">-</span></p>
+      <p>Time: <span id="selected-time">-</span></p>
     </div>
+        </div>
 
     <script src="script.js"></script>
   </body>
