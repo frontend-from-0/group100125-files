@@ -37,10 +37,32 @@
           placeholder="Sophia"
           name="firstname"
         />
+        <p id="firstnameError" class="input-error hidden"></p>
       </div>
       <div class="input-group">
         <label for="lastname">Last Name</label>
         <input id="lastname" type="text" placeholder="Clark" name="lastname" />
+        <p id="lastnameError" class="input-error hidden"></p>
+      </div>
+      <div class="input-group">
+        <label for="adress">Adress</label>
+        <input id="adress" type="text" placeholder="123 Mapple Street" name="adress" />
+        <p id="adressError" class="input-error hidden"></p>
+      </div>
+      <div class="input-group">
+        <label for="city">City</label>
+        <input id="city" type="text" placeholder="Anytown" name="city" />
+        <p id="cityError" class="input-error hidden"></p>
+      </div>
+      <div class="input-group">
+        <label for="state">State</label>
+        <input id="state" type="text" placeholder="CA" name="state" />
+        <p id="stateError" class="input-error hidden"></p>
+      </div>
+      <div class="input-group">
+        <label for="zipcode">Zip Code</label>
+        <input id="zipcode" type="text" placeholder="90210" name="zipcode" />
+        <p id="zipcodeError" class="input-error hidden"></p>
       </div>
 
       <div class="input-group">
@@ -51,14 +73,17 @@
           placeholder="1234 5678 9101 1121"
           name="cardnumber"
         />
+        <p id="cardnumberError" class="input-error hidden"></p>
       </div>
       <div class="input-group">
         <label for="expDate">Expiration Date</label>
         <input id="expDate" type="text" placeholder="MM/YY" name="expDate" />
+        <p id="expDateError" class="input-error hidden"></p>
       </div>
       <div class="input-group">
         <label for="cvv">CVV</label>
         <input id="cvv" type="text" placeholder="123" name="cvv" />
+        <p id="cvvError" class="input-error hidden"></p>
       </div>
       <button type="submit" class="btn-success">Place Order</button>
     </form>
