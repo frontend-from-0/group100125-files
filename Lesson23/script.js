@@ -41,8 +41,8 @@ Example requests
 HTTPS methods: 
 - GET (to request data)
 - POST (to send data)
-- UPDATE
-- DELETE
+- PUT / PATCH (to update data)
+- DELETE (to delete data)
 
 GET request
 fetch('https://api.example.com/data?name=John&surname=Doe')
