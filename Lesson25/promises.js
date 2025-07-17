@@ -29,7 +29,6 @@ Fetch API uses Promises under the hood, it's the main way how we will be using t
   });
 */
 
-
 const myPromise = new Promise((resolve, reject) => {
   // Inside the Promise, you can place the code you want to execute asynchronously.
 
@@ -47,7 +46,6 @@ const myPromise = new Promise((resolve, reject) => {
   }, 2000); // Delay for 2 seconds (2000 milliseconds)
 });
 
-// Step 2: Using .then() to handle resolved Promise
 myPromise
   .then((result) => {
     console.log(result); // This code will execute if the Promise is resolved
@@ -56,14 +54,101 @@ myPromise
     console.error(error); // This code will execute if the Promise is rejected
   });
 
-console.log("Promise created. Waiting for it to resolve or reject...");
-
+console.log('Promise created. Waiting for it to resolve or reject...');
 
 /* Asyc / await syntax for working with Promises */
 
 // Examples of making a function asyncronous
 // Function declaration
+async function fetchData() {
+  const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+
+  const posts = await response.json();
+
+  function fetchComments(posts) {
+    posts.map(async function (post) {
+      const commentsRes = await fetch(
+        `https://google.com/posts/${post.id}/comments`,
+      );
+      const comments = await commentsRes.json();
+    });
+  }
+  fetchComments(posts);
+}
+
+fetchData();
+
 // Function expression
+// const fetchData = async function () {
+//   const response = await fetch('https://google.com/posts');
+//   const posts = await response.json();
+// }
 // Arrow function
 
+// const fetchPosts = async () => {
+//   const response = await fetch('https://google.com/posts');
+//   const posts = await response.json();
+// }
+
+// const fetchPost = async (postId) => {
+//   const response = await fetch('https://google.com/posts/' + postId);
+//   const posts = await response.json();
+// }
+
 // Try, catch, finally
+
+async function getUsers() {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/users');
+    if (!response.ok) throw Error('Failed fetching users');
+    const users = await response.json();
+  } catch (error) {
+    console.error(error);
+  } finally {
+    console.log('Done fetching users!');
+  }
+}
+
+// const fetchPosts = fetch('https://jsonplaceholder.typicode.com/posts/1');
+// const fetchComments = fetch(
+//   'https://jsonplaceholder.typicode.com/posts/1/comments',
+// );
+
+// Promise.all([fetchPosts, fetchComments])
+//   .then((responses) => {
+//     const postsRes = responses[0];
+//     const commentsRes = responses[1];
+//     return [postsRes.json(), commentsRes.json()];
+//   })
+//   .then((data) => {});
+
+// async function getPosts() {
+//   try {
+//     const response = await fetch(URL);
+//     if (!response.ok) throw Error('Failed to fetch posts');
+//     const json = await response.json();
+
+//     json.map((post) => {
+//       const div = document.createElement('div');
+//       div.classList.add('post');
+//       const h3 = document.createElement('h3');
+//       h3.innerText = post.title;
+
+//       const p = document.createElement('p');
+//       p.innerText = post.body;
+
+//       div.appendChild(h3);
+//       div.appendChild(p);
+
+//       const container = document.getElementById('container');
+//       container.appendChild(div);
+//     });
+//   } catch (error) {
+//     const errorElement = document.createElement('p');
+//     errorElement.innerText = 'Failed to fetch posts, please try again later';
+
+//     container.appendChild(errorElement);
+
+//     console.error(`Failed to fetch posts, please try again later.`);
+//   }
+// }
