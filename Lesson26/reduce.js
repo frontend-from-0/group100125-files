@@ -24,13 +24,22 @@ const numbersEx2 = [8, 3, 11, 6, 4];
 const elements = ['a', 'b', 'a', 'c', 'b', 'a'];
 
 const elementCounts = elements.reduce((accumulator, currentValue) => {
-  if (accumulator[currentValue]) {
+  if (accumulator[currentValue]) { 
     accumulator[currentValue]++;
   } else {
     accumulator[currentValue] = 1;
   }
   return accumulator;
 }, {});
+// accumulator is {}, currentValue is 'a'
+// accumulator is {a: 1}, currentValue is 'b'
+// accumulator is {a: 1, b:1}, currentValue is 'a'
+// accumulator is {a: 2, b:1}, currentValue is 'c'
+// accumulator is {a: 2, b:1, c:1}, currentValue is 'b'
+// accumulator is {a: 2, b:2, c:1}, currentValue is 'a'
+//  return  {a: 3, b:2, c:1}
+
+
 
 console.log(elementCounts); // Output: { a: 3, b: 2, c: 1 }
 

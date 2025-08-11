@@ -2,11 +2,14 @@
 // Given an array of numbers, filter out the even numbers.
 const numbersExercise1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
+const evenNumbers = numbersExercise1.filter(number =>  number %2 === 0);
+console.log(evenNumbers);
+
 
 // Exercise 2:
 // Given an array of strings, filter out the strings that contain the letter "a".
 const wordsExercise2 = [
-	'apple',
+	'Apple',
 	'banana',
 	'car',
 	'dog',
@@ -18,6 +21,8 @@ const wordsExercise2 = [
 	'jungle',
 ];
 
+const stringWithA = wordsExercise2.filter(word => word.toLowerCase().includes("a"));
+console.log(stringWithA);
 
 // Exercise 3:
 // Given an array of objects representing books, filter out the books with a price less than $10.
@@ -84,6 +89,8 @@ const booksExercise9 = [
 	},
 ];
 
+const lessThanTen = booksExercise9.filter(book => book.price < 10);
+console.log(lessThanTen);
 
 // Exercise 4:
 // Given an array of user objects, filter out the users who are below 25 years old.
@@ -325,6 +332,14 @@ const studentsExercise9 = [
 		grade: 'B-',
 	},
 ];
+// A++, A+, A, A-, A--, B++, B+....., C++, C+, C, C-, C--..., D++, D+, ...,E++, E+, E, E-, E--
+
+const lowGrades = [
+	'C-', 'C--', 'D++', 'D+', 'D', 'D-', 'D--', 'E++', 'E+', 'E', 'E-', 'E--'
+];
+
+const studentsWithLowGrades = studentsExercise9.filter(student => lowGrades.includes(student.grade.toUpperCase()));
+console.log(studentsWithLowGrades);
 
 // Exercise 10:
 // Given an array of user objects, filter out the users who have a name starting with the letter "J".
