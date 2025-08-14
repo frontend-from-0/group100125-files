@@ -13,7 +13,7 @@ If an argument is undefined, the default value is used. Other falsy values like 
 Default parameters are defined in the function signature.
 
 ```
-function functionName(parameter1 = defaultValue1, parameter2 = defaultValue2) {
+function doSomething(parameter1 = defaultValue1, parameter2 = defaultValue2) {
   // function body
 }
 ```

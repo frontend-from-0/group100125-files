@@ -1,6 +1,14 @@
-// Arrays 
+// Arrays
 // Basic Example
-const numbers = ['hello', null, true, undefined, function () {console.log(hello);}];
+const numbers = [
+  'hello',
+  null,
+  true,
+  undefined,
+  function () {
+    console.log('hello');
+  },
+];
 
 // Without destructuring
 // const first = numbers[0];
@@ -8,25 +16,15 @@ const numbers = ['hello', null, true, undefined, function () {console.log(hello)
 // const third = numbers[2];
 // const fourth = numbers[3];
 
-
 // With destructuring
-// const [first, second, third, fourth, fifth] = numbers;
-
-// console.log(first); // 1
-// console.log(second); // 2
-// console.log(third); // 3
-// console.log(fourth); // 4
-// console.log(fifth); // 5
-// console.log('--------'); // 4
-
+// const [first,  second, third,  fourth, fifth] = numbers;
 
 
 // Skipping Elements
 // const [first, , , fourth] = [0, 0, 0];
-// console.log(first); 
+// console.log(first);
 // console.log(fourth);
 // console.log('--------'); // 4
-
 
 // Using Rest Parameters to Capture the Rest of the Elements
 const [first, second, ...remaningElementsArray] = numbers;
@@ -48,15 +46,16 @@ console.log(first, second, remaningElementsArray);
 // const [count, setCount] = useState();
 // const [timer, setTimer] = useState();
 
-
+// If we want to use let and conts for different values:
+// let [, value2] = numbers;
+// const [one, , three, four, five] = numbers;
 
 // Default Values
 const numbersForDefaultValuesExample = [1];
 const [a = 10, b = 20] = numbersForDefaultValuesExample;
 
 console.log(a); // 1
-console.log(b); // 20
-
+console.log(b); // undefined
 
 // Objects
 // Basic Usage
@@ -65,7 +64,7 @@ const person = {
   name: 'Alice',
   age: 30,
   job: 'Engineer',
-  isStudent: true
+  isStudent: true,
 };
 
 // Without destructuring
@@ -75,7 +74,6 @@ const person = {
 // With destructuring
 // const { age, name } = person;
 
-
 // console.log(name); // Alice
 // console.log(age);  // 30
 
@@ -84,13 +82,13 @@ const person = {
 // const age = person.age;
 // const name = person.name;
 
-
 // console.log(name); // Alice
 // console.log(personAge);  // 30
 
-
 // Default Values
-// const { name: anotherPersonName = 'John Doe', isStudent = false } = person;
+const { 
+  name: anotherPersonName = 'John Doe',
+   isStudent = false } = person;
 
 // console.log(anotherPersonName); // Alice
 // console.log(isStudent);  // false
@@ -104,33 +102,38 @@ const personWithContactInfo = {
     email: 'dave@example.com',
     phone: '123456789',
     address: {
-      line1: "Kungstagatan 1",
-      postcode: '444222'
-    }
-  }
+      line1: 'Kungstagatan 1',
+      postcode: '444222',
+    },
+  },
 };
 
-const { 
+const {
   name: firstName,
-  contact: { email, phone, address: {line1, postcode: postalCode} } 
+  contact: {
+    email,
+    phone,
+    address: { line1, postcode: postalCode },
+  },
 } = personWithContactInfo;
 
-// console.log(firstName); // Dave
-// console.log(email); // dave@example.com
-// console.log(phone); // 123456789
-// console.log(line1); // Kungstagatan 1
-// console.log(postalCode); // 444222
-
+console.log('-----------')
+console.log(firstName); // Dave
+console.log(email); // dave@example.com
+console.log(phone); // 123456789
+console.log(line1); // Kungstagatan 1
+console.log(postalCode); // 444222
+console.log('-----------')
 
 
 // Rest Properties
-const { name: nameForRestExample, age: ageForRestExample, ...rest } = personWithContactInfo;
+const {
+  name: nameForRestExample,
+  age: ageForRestExample,
+  ...rest
+} = personWithContactInfo;
 console.log(nameForRestExample);
 console.log(ageForRestExample);
 console.log(rest);
 
 // In JS, ... is called 'rest operator'
-
-
-
-
