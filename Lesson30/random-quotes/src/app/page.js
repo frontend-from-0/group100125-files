@@ -1,17 +1,22 @@
 'use client';
-import { quotes } from '../../quotes.js';
 import { useState } from 'react';
 import Card from '../components/Card.jsx';
 import { Title, align } from '../components/Title.jsx';
+import Button from '@/components/Button';
+import { useQuotesContext } from './QuotesContext.js';
 
 export default function Home() {
-  const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
+  const quotes = useQuotesContext();
+  const [currentQuoteIndex, setCurrentQuoteIndex] = useState(quotes.length-1);
+  console.log('In the home component!', quotes);
 
-  function handleSubmit() {
+  function handleNextClick() {
     console.log('The button is clicked!');
     console.log('The next quote is:', quotes[currentQuoteIndex].quote);
 
-    setCurrentQuoteIndex((prev) => prev + 1);
+    // TODO: we need to add logic so that we don't get outside the range of array
+    setCurrentQuoteIndex((prev) => prev - 1);
+
   }
 
   return (
@@ -22,12 +27,7 @@ export default function Home() {
         <span className='text-end block'>
           {quotes[currentQuoteIndex].author}
         </span>
-        <button
-          onClick={handleSubmit}
-          className='bg-slate-400 rounded-lg p-2 hover:bg-slate-500 mt-8'
-        >
-          Next quote
-        </button>
+        <Button onClick={handleNextClick} label='Next quote' />
       </Card>
     </main>
   );
