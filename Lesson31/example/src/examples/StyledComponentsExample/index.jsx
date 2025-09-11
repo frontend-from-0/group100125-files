@@ -9,8 +9,7 @@ const StyledDiv = styled('div')`
 	width: 100%;
 	max-width: 500px;
 	margin: 20px auto;
-	padding: 20px;
-`;
+	padding: 20px;`;
 
 const greeting = (name) => `Hello ${name}`;
 greeting('John');
@@ -24,7 +23,7 @@ export const StyledComponentsExample = () => {
   const theme = useTheme();
 
 	return (
-		<StyledDiv color={theme.palette.primary.main}>
+		<StyledDiv color={theme.palette.warning.light}>
 			{/* <Typography variant='h3' color={theme.palette.primary.main}>This is Styled Components Example component</Typography> */}
       <h1>This is Styled Components Example component</h1>
 			<StyledTypography variant='body1' component="p">
