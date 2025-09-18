@@ -6,7 +6,7 @@
 // };
 
 const greet: (name: string) => string = function (name) {
-	return `Hello, ${name}!`;
+  return `Hello, ${name}!`;
 };
 
 greet('Jane');
@@ -16,18 +16,13 @@ greet('Jane');
 // 	console.log(`Message: ${message}, User ID: ${userId ?? 'Not provided'}`);
 // };
 
-
-let logMessage = function (
-	message: string,
-	userId?: string
-): void {
-	console.log(`Message: ${message}, User ID: ${userId ?? 'Not provided'}`);
+let logMessage = function (message: string, userId?: string): void {
+  console.log(`Message: ${message}, User ID: ${userId ?? 'Not provided'}`);
 };
 
 logMessage('Test message');
 
 // Function Type for Callbacks
-
 
 // const processUserInput = function (input, callback) {
 // 	// Process the input...
@@ -35,13 +30,17 @@ logMessage('Test message');
 // 	callback(response);
 // };
 
-const processUserInput: (
-	input: string,
-	callback: (message: string) => void
-) => void = function (input, callback) {
-	// Process the input...
-	const response = `Processed input: ${input}`;
-	callback(response);
+type ProcessUserInput = (
+  input: string,
+  callback: (message: string) => void,
+) => void;
+
+const processUserInput: ProcessUserInput = function (input, callback) {
+  // Process the input...
+  const response = `Processed input: ${input}`;
+  callback(response);
 };
 
-processUserInput('Input', (response) => console.log('This is input value:', response));
+processUserInput('Input', (response) =>
+  console.log('This is input value:', response),
+);

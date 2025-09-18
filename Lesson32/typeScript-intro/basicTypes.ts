@@ -31,7 +31,7 @@ enum Weekdays {
   //...
 };
 
-console.log('Monday', Weekdays.MO);
+console.log(Weekdays);
 
 // The any type allows for any type of value, opting out of type-checking. Use this sparingly as it defeats the purpose of TypeScript.
 let notSure: any = 4;
@@ -52,7 +52,6 @@ const warnUserArrow: WarnUserArrowFunction = () => {
 // In TypeScript, both undefined and null actually have their own types named undefined and null respectively.
 const u: undefined = undefined; // if values wasn't set yet
 const n: null = null;  // if we want to re-set / remove value
-
 
 // The `never` type represents the type of values that never occur. For instance, it is the return type for a function expression or an arrow function expression that always throws an exception or one that never returns.
 

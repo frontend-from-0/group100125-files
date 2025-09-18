@@ -1,24 +1,30 @@
 'use client';
-import { createContext, useState, useContext } from 'react';
+import { createContext, useState, useContext, ReactNode } from 'react';
 import { quotes as quotesArray } from '../../quotes';
+import { Quote } from '../../quotes';
 
-const QuotesContext = createContext([]);
-const QuotesDispatchContext = createContext(undefined);
+const QuotesContext = createContext<Quote[]>([]);
+const QuotesDispatchContext = createContext<((newQuote: Quote) => void) | undefined>((undefined));
 
-export const QuotesProvider = ({ children }) => {
-  const [quotes, setQuotes] = useState([
+
+interface QuotesProviderProps {
+  children?: ReactNode;
+}
+
+export const QuotesProvider = ({ children }: QuotesProviderProps) => {
+  const [quotes, setQuotes] = useState<Quote[]>([
     ...quotesArray,
     { quote: 'Dummy quote', author: 'Dummy quote author' },
   ]);
 
   console.log('Quotes are', quotes.length);
 
-  function handleUpdateQuotes(newQuote) {
+  function handleUpdateQuotes(newQuote:Quote) {
     console.log('Adding a new quote!');
-    setQuotes(prev => {
+    setQuotes((prev) => {
       console.log('old quotes are', prev.length);
-      return [ ...prev, newQuote]
-    })
+      return [...prev, newQuote];
+    });
   }
 
   return (

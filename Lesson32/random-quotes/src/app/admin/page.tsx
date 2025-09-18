@@ -1,9 +1,10 @@
 'use client';
 
 import Card from '@/components/Card';
-import Button from '@/components/Button';
-import {useState} from 'react';
+import { useState } from 'react';
 import { useQuotesDispatchContext } from '../QuotesContext';
+import { Button } from '@/components/ui/button';
+import { Quote } from '../../../quotes';
 
 export default function AdminPage() {
   const [quote, setQuote] = useState('');
@@ -11,22 +12,23 @@ export default function AdminPage() {
 
   const updateQuotes = useQuotesDispatchContext();
 
-
-  function handleSubmit(event) {
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    console.log('Form submitted!',quote, author);
+    console.log('Form submitted!', quote, author);
 
-    updateQuotes({quote, author});
+    updateQuotes?.({ quote, author } as Quote);
     setQuote('');
     setAuthor('');
     // You normally have to validate the input data but we are skipping it on purpose this time
   }
 
+  const isSubmitDisabled = quote.length === 0 || author.length === 0;
+
   return (
     <main className='min-h-dvh flex items-center justify-center bg-slate-600'>
       <Card>
         <form className='flex flex-col' onSubmit={handleSubmit}>
-          <label for='quote'>Quote</label>
+          <label htmlFor='quote'>Quote</label>
           <input
             type='text'
             id='quote'
@@ -35,7 +37,7 @@ export default function AdminPage() {
             onChange={(e) => setQuote(e.target.value)}
           />
 
-          <label for='author'>Author</label>
+          <label htmlFor='author'>Author</label>
           <input
             type='text'
             id='author'
@@ -44,7 +46,12 @@ export default function AdminPage() {
             onChange={(e) => setAuthor(e.target.value)}
           />
 
-          <Button onClick={handleSubmit} label='Add a quote' type='submit' />
+          <Button
+            disabled={isSubmitDisabled}
+            type='submit'
+          >
+            Add a quote
+          </Button>
         </form>
       </Card>
     </main>

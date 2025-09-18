@@ -1,8 +1,9 @@
 'use client';
+
 import { useState } from 'react';
-import {Button} from '@/components/ui/button';
-import { useQuotesContext } from './QuotesContext.js';
-import { Card, CardTitle, CardContent } from '@/components/ui/card.jsx';
+import { useQuotesContext } from './QuotesContext';
+import { Card, CardTitle, CardContent } from '@/components/ui/card';
+import { Button } from '../components/ui/button';
 
 export default function Home() {
   const quotes = useQuotesContext();
@@ -21,11 +22,15 @@ export default function Home() {
     <main className='min-h-dvh flex items-center justify-center'>
       <Card className={'max-w-lg w-full'}>
         <CardContent>
-          <CardTitle  className='text-center my-8' >{quotes[currentQuoteIndex].quote}</CardTitle>
+          <CardTitle className='text-center my-8'>
+            {quotes[currentQuoteIndex].quote}
+          </CardTitle>
           <span className='text-end block'>
             {quotes[currentQuoteIndex].author}
           </span>
-          <Button className='mt-12 w-full' onClick={handleNextClick}>Next quote</Button>
+          <Button className='mt-12 w-full' onClick={handleNextClick}>
+            Next quote
+          </Button>
         </CardContent>
       </Card>
     </main>
