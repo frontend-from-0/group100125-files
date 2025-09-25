@@ -26,9 +26,8 @@ export default function SignUp() {
 
   useEffect(() => {
     if (!!firebaseError) {
-      console.log(firebaseError);
       const uiError = getUIErrorFromFirebaseError(firebaseError.code);
-      
+
       setError(uiError);
     }
   }, [firebaseError]);

@@ -8,7 +8,7 @@ type AuthContextType = {
   login: (username: string, password: string) => Promise<void>;
   logout: () => void;
   register: (username: string, password: string) => Promise<void>;
-  error: AuthError;
+  error: AuthError | null;
 };
 
 const AuthContext = createContext<AuthContextType | null>(null);
@@ -20,13 +20,14 @@ interface AuthError {
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
-  const [error, setError] = useState<AuthError>({ code: '', message: '' });
+  const [error, setError] = useState<AuthError| null>(null);
 
   const register = async (username: string, password: string) => {
     createUserWithEmailAndPassword(auth, username, password)
       .then((userCredential) => {
         const user = userCredential.user;
         setUser(user);
+        setError(null);
       })
       .catch((error) => {
         const errorCode = error.code;
