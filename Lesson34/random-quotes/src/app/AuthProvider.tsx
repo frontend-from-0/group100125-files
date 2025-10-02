@@ -1,38 +1,54 @@
 'use client';
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
-  User,
+  User as FirebaseUser,
   signOut,
 } from 'firebase/auth';
-import { auth } from '@/lib/firebase';
+import { auth, FirebaseError } from '@/lib/firebase';
+import { createUser } from '@/lib/firebase';
+
+export interface User extends FirebaseUser {
+  firstname?: string;
+  lastname?: string;
+}
 
 type AuthContextType = {
   user: User | null;
+  setUser: (user: User | null) => void;
   login: (username: string, password: string) => Promise<void>;
   logout: () => void;
   register: (username: string, password: string) => Promise<void>;
-  error: AuthError | null;
+  error: FirebaseError | null;
 };
 
 const AuthContext = createContext<AuthContextType | null>(null);
 
-interface AuthError {
-  code: string;
-  message: string;
-}
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
-  const [error, setError] = useState<AuthError | null>(null);
+  const [error, setError] = useState<FirebaseError | null>(null);
+  
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged(async (firebaseUser) => {
+      if (firebaseUser) {
+        setUser(firebaseUser as User);
+      } else {
+        setUser(null);
+      }
+    });
 
-  const register = async (username: string, password: string) => {
-    createUserWithEmailAndPassword(auth, username, password)
-      .then((userCredential) => {
+    return () => unsubscribe();
+  });
+
+  const register = async (email: string, password: string) => {
+     createUserWithEmailAndPassword(auth, email, password)
+      .then(async (userCredential)  => {
         const user = userCredential.user;
         setUser(user);
         setError(null);
+        await createUser (email, user.uid);
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -68,7 +84,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, register, error }}>
+    <AuthContext.Provider value={{ user, setUser, login, logout, register, error }}>
       {children}
     </AuthContext.Provider>
   );

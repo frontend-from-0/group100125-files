@@ -6,9 +6,10 @@ import { Button } from '@/components/ui/button';
 import { useEffect, useState } from 'react';
 import { Alert, AlertTitle } from '@/components/ui/alert';
 import { useAuth } from '@/app/AuthProvider';
-import { useRouter } from 'next/router';
 import { redirect } from 'next/navigation';
 import { getUIErrorFromFirebaseError } from '@/lib/firebase';
+import { emailRegex } from '@/lib/patterns';
+
 
 export default function SignUp() {
   const [email, setEmail] = useState<string>('');
@@ -31,8 +32,6 @@ export default function SignUp() {
       setError(uiError);
     }
   }, [firebaseError]);
-
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
