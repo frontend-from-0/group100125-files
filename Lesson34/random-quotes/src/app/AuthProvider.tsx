@@ -4,7 +4,7 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   User,
-  signOut
+  signOut,
 } from 'firebase/auth';
 import { auth } from '@/lib/firebase';
 
@@ -32,7 +32,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       .then((userCredential) => {
         const user = userCredential.user;
         setUser(user);
-        // Create a use in our own database
         setError(null);
       })
       .catch((error) => {
