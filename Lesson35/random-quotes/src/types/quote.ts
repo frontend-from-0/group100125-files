@@ -6,14 +6,13 @@ export interface Quote {
 }
 
 export const QuoteSchema = z.object({
-  quote: z.string().min(30),
-  author: z.string().min(3),
+  quote: z.string().min(30, 'The quote should be at least 30 chars long.'),
+  author: z.string().min(3, 'The author should be at least 3 chars long.'),
 });
 
 export interface NewQuoteFormState {
   success: boolean;
   message?: string;
-  inputs?: Partial<Quote>;
   errors?: {
     [K in keyof Quote]?: string[];
   };

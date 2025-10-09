@@ -10,18 +10,24 @@ import {
 } from './ui/navigation-menu';
 import { useAuth } from '@/app/AuthProvider';
 
-
 export const Navbar = () => {
-  const {user, logout} = useAuth();
+  const { user, logout } = useAuth();
   return (
     <NavigationMenu className='bg-gray-200 dark:bg-gray-900'>
-      <NavigationMenuList className={'flex gap-4 justify-end w-screen px-16 py-4'}>
-        <NavigationMenuItem >
+      <NavigationMenuList
+        className={'flex gap-4 justify-end w-screen px-16 py-4'}
+      >
+        <NavigationMenuItem>
           <NavigationMenuLink asChild>
             <Link href='/'>Home</Link>
           </NavigationMenuLink>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuLink asChild>
+            <Link href='/quotes/new'>Add Quote</Link>
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
           <NavigationMenuLink asChild>
             <Link href='/admin/'>Admin</Link>
           </NavigationMenuLink>
@@ -34,10 +40,10 @@ export const Navbar = () => {
           </NavigationMenuItem>
         ) : (
           <NavigationMenuItem>
-          <NavigationMenuLink asChild>
-            <Link href='/user/login'>Login</Link>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
+            <NavigationMenuLink asChild>
+              <Link href='/user/login'>Login</Link>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
         )}
 
         <ModeToggle />
