@@ -114,4 +114,36 @@ export async function createUser(
   }
 }
 
+export async function createQuote(
+  title: string,
+  author: string,
+  userId: string
+): Promise<FirestoreResponse> {
+  try {
+    const currentTime = new Date().toISOString();
+    const quoteId = Date.now().toString();
+
+    await addDoc(collection(db, 'quotes'), {
+      userID: userId,
+      quoteId,
+      title,
+      author,
+      createdAt: currentTime,
+      updatedAt: currentTime,
+      verified: false
+    });
+    return { success: true};
+  } catch (e) {
+    if (typeof e === 'object' && e !== null && 'code' in e && 'message' in e) {
+      return {
+        success: false,
+        error: { code: (e as any).code, message: (e as any).message },
+      };
+    }
+    return {
+      success: false,
+      error: { code: 'unknown', message: 'An unknown error occurred' },
+    };
+  }
+}
 
