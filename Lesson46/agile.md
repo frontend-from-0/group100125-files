@@ -98,7 +98,7 @@ Agile is a mindset. There are different **frameworks** (ways to organize the wor
 
 ---
 
-## ✅ Summary
+## Summary
 Agile is about **building products step-by-step**, **getting feedback early**, and **adjusting quickly**. It’s about **collaboration, flexibility, and fast results**.
 
 
