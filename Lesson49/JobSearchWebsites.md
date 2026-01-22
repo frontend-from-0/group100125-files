@@ -4,6 +4,7 @@ https://thehub.io/ (Nordic startups)
 https://up2staff.com/
 https://www.works-hub.com/jobs/search
 https://www.jobteaser.com/
+https://www.xing.com/en
 
 
 https://justjoin.it/

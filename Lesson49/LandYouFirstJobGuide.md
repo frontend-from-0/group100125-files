@@ -24,7 +24,7 @@ Contribute to open-source projects, especially if you can fix bugs or add small 
 
 -------------------------------------------------------------------
 
-## Searching for Opportunities in 2025
+## Searching for Opportunities
 
 ### Where and How to Search
 #### Remote-Focused Sites:
@@ -34,6 +34,7 @@ Contribute to open-source projects, especially if you can fix bugs or add small 
 
 
 #### Networking & Communities:
+- https://adplist.org/explore
 
 - Slack/Discord: Join local developer communities (e.g., TurkeyJS, Stockholm.js). 
 Türkiye Bilişim Derneği https://www.tbd.org.tr/en/
@@ -46,7 +47,7 @@ https://women-in-tech.org/
 
 - Referrals: LinkedIn connections, alumni from your bootcamp, or friends in tech can refer you internally.
 
-#### Different Strategies & Tools (2025 Edition)
+#### Different Strategies & Tools
 - AI-Assisted Job Search: Tools like ChatGPT plugins or specialized job-matching AI:
   - AiApply https://aiapply.co/
   - https://www.kickresume.com
